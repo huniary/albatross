@@ -1,11 +1,12 @@
-import React from "react";
-import { Helmet } from "react-helmet-async";
-import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import PostList from "./pages/PostList";
-import ReadPost from "./pages/ReadPost";
-import Register from "./pages/Register";
-import WriterPost from "./pages/WriterPost";
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import PostList from './pages/PostList';
+import ReadPost from './pages/ReadPost';
+import Register from './pages/Register';
+import UserInfo from './pages/UserInfo';
+import WriterPost from './pages/WriterPost';
 
 function App() {
   //Login
@@ -15,7 +16,7 @@ function App() {
   return (
     //안에내용다지우고시작
     <>
-    {/* <Helmet>
+      {/* <Helmet>
       <title>알바트로오스</title>
     </Helmet> */}
       <Routes>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/@:username" element={<PostList />} exact />
         <Route path="/@:username/:postId" element={<ReadPost />} />
         <Route path="/write" element={<WriterPost />} />
+        <Route path="/userInfo" element={<UserInfo />} />
       </Routes>
     </>
   );
