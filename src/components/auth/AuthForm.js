@@ -81,8 +81,8 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
               onChange={onChange}
               value={form.passwordConfirm}
             />
-            <StyledInput name="phone" placeholder="Phone" onChange={onChange} value={form.phone} />
-            <StyledInput name="email" placeholder="Email" onChange={onChange} value={form.email} />
+            <StyledInput name="phone" placeholder="Phone Number" onChange={onChange} value={form.phone} />
+            <StyledInput name="email" placeholder="E-mail" onChange={onChange} value={form.email} />
             <StyledInput name="address" placeholder="Address" onChange={onChange} value={form.address} />
           </>
         )}
