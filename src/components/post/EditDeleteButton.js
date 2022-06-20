@@ -30,7 +30,7 @@ const ActionButton = styled.button`
     }
 `;
 
-const  EditDeleteButton = ({onEdit, onDelete}) =>{
+const  EditDeleteButton = ({onEdit, onDelete, onReDelete}) =>{
 
     const [modal, setModal] = useState(false);
 

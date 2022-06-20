@@ -40,7 +40,8 @@ const root = createRoot(document.getElementById("root"))
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+              {/* 퍼블릭_URL 깃허브꺼  */}
       {/* <HelmetProvider>   */}
         <App />
       {/* </HelmetProvider> */}

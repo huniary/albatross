@@ -35,7 +35,7 @@ const PostList = () => {
     dispatch(fetchPostList({ username, tag, page }));
   }, [dispatch, username, location.search]);
   
-  console.log(username);
+  // console.log(username);
 
   return (
     <>

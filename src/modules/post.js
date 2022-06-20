@@ -12,7 +12,7 @@ export const readPost = createRequestThunk(READ, api.readPost);
 export const unloadPost = createAction(UNLOAD_POST);
 
 const init = {
-    post: null,
+    post: "",
     error: null,
 };
 

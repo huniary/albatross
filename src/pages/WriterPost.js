@@ -12,7 +12,7 @@ import HeaderContainer from "../containers/HeaderContainer";
 const  WriterPost = () => {
     const dispatch = useDispatch();
     const {title, body, tags, post, postError, originalPostId} = useSelector(({write})=>({
-        title: write.title ,
+        title: write.title,
         body: write.body,
         tags: write.tags,
         post: write.post,
