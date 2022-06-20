@@ -1,9 +1,8 @@
-
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import palette from "../../lib/palette";
-import Button from "../Button";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import palette from '../../lib/palette';
+import Button from '../Button';
 
 const AuthFormBlock = styled.div`
   h4 {
@@ -49,17 +48,17 @@ const ErrMsg = styled.div`
   text-align: center;
   font-size: 0.875rem;
   margin-top: 1rem;
-`
-
-
+`;
 
 const textMap = {
-  login: "LOG IN",
-  register: "REGISTER",
+  login: 'LOG IN',
+  register: 'REGISTER',
 };
 
 const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type]; //"LOG IN"
+
+  console.log(form);
   return (
     <AuthFormBlock>
       <h4>{text}</h4>
@@ -68,38 +67,33 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
           name="username"
           placeholder="ID"
           minLength="4"
-          maxLength= "15"
+          maxLength="15"
           onChange={onChange}
           value={form.username}
         />
-        <StyledInput
-          type="password"
-          name="password"
-          placeholder="PW"
-          onChange={onChange}
-          value={form.password}
-        />
-        {type === "register" && (
-          <StyledInput
-            type="password"
-            name="passwordConfirm"
-            placeholder="PW CONFIRM"
-            onChange={onChange}
-            value={form.passwordConfirm}
-          />
+        <StyledInput type="password" name="password" placeholder="PW" onChange={onChange} value={form.password} />
+        {type === 'register' && (
+          <>
+            <StyledInput
+              type="password"
+              name="passwordConfirm"
+              placeholder="PW CONFIRM"
+              onChange={onChange}
+              value={form.passwordConfirm}
+            />
+            <StyledInput name="phone" placeholder="Phone" onChange={onChange} value={form.phone} />
+            <StyledInput name="email" placeholder="Email" onChange={onChange} value={form.email} />
+            <StyledInput name="address" placeholder="Address" onChange={onChange} value={form.address} />
+          </>
         )}
         {error && <ErrMsg>{error}</ErrMsg>}
 
-        <Button fullWidth cyan style={{ marginTop: "1rem" }}>
+        <Button fullWidth cyan style={{ marginTop: '1rem' }}>
           {text}
         </Button>
       </form>
       <Footer>
-        {type === "register" ? (
-          <Link to="/login">로그인</Link>
-        ) : (
-          <Link to="/register">아직 회원이 아니십니까?</Link>
-        )}
+        {type === 'register' ? <Link to="/login">로그인</Link> : <Link to="/register">아직 회원이 아니십니까?</Link>}
       </Footer>
     </AuthFormBlock>
   );
